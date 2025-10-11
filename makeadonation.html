@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Make a Donation | Eucharia Help Foundation</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <img src="logo.JPG" alt="Logo" />
+      <h1>The Foundation</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="achievements.html">Works</a>
+      <a href="activity-photos.html">Activity Photos</a>
+      <a href="join-us.html" class="active">Join Us</a>
+    </nav>
+  </header>
+  <section class="content-section">
+    <h2>Make a Donation</h2>
+    <p>Your support helps us continue to make a lasting impact in the lives of many. Fill out the form below to donate.</p>
+
+    <!-- Donation Form -->
+    <form class="donate-form" id="donateForm" action="https://formspree.io/f/xovkkzlb" method="POST">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" placeholder="Enter your name" required />
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" placeholder="Enter your email" required />
+
+      <label for="orgName">Organization Name:</label>
+      <input type="text" id="orgName"/>
+
+      <label for="message">Message (Optional):</label>
+      <textarea id="message" rows="4" placeholder="Your message..."></textarea>
+
+      <button type="submit" id="proceedBtn">Proceed</button>
+    </form>
+
+    <p id="confirmation" class="success-message"></p>
+  </section>
+
+  <!-- Hidden Bank Details Section -->
+  <section class="bank-details hidden" id="bankDetails">
+    <h3>Bank Account Details</h3>
+    <div class="accounts-container">
+      <div class="account-box">
+        <h4>🇳🇬 Local Donations (NGN)</h4>
+        <p><strong>Bank Name:</strong> Access Bank Nigeria Plc</p>
+        <p><strong>Account Name:</strong> Eucharia Help Foundation</p>
+        <p><strong>Account Number:</strong> 0047690527</p>
+      </div>
+
+      <div class="account-box">
+        <h4>🌍 International Donations (USD)</h4>
+        <p><strong>Bank Name:</strong> Eco Bank Domiciliary account</p>
+        <p><strong>Account Name:</strong> Eucharia Help Foundation</p>
+        <p><strong>Account Number (USD):</strong> 1612008306</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Bottom-right Logo -->
+<div class="bottom-logo">
+  <img src="logo.JPG" alt="Logo" />
+</div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Eucharia Help Foundation. All Rights Reserved.</p>
+    <p>Contact: www.euchariahelpfoundation.org | +234 803 971 5599 | euchariahelpfoundation@yahoo.com | No 14, Enahoro Street Lekki,Lagos, Nigeria</p>
+  </footer>
+
+  
+</body>
+</html> 

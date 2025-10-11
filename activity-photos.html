@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Activity Photos | Eucharia Help Foundation</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* --- ACTIVITY PHOTOS PAGE STYLING --- */
+    body {
+      background-color: #f8f9fa;
+      font-family: "Poppins", sans-serif;
+      color: #333;
+    }
+
+    .gallery-section {
+      padding: 60px 20px;
+      text-align: center;
+      background-color: #fafafa;
+    }
+
+    .gallery-section h2 {
+      font-size: 2.2em;
+      color: black;
+      margin-bottom: 12px;
+    }
+
+    .gallery-section p {
+      font-size: 1.1em;
+      color: #555;
+      margin-bottom: 40px;
+    }
+
+    /* Main gallery container */
+    .photo-grid {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* Each photo box */
+    .photo-card {
+      width: 90%;
+      max-width: 800px;
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .photo-card:hover {
+      transform: scale(1.01);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+    }
+
+    /* Uniform image size */
+    .photo-card img {
+      width: 100%;
+      height: 450px; /* fixed height for all */
+      object-fit: cover; /* crop and fill evenly */
+      display: block;
+      border-bottom: 2px solid #eee;
+    }
+
+    .photo-caption {
+      padding: 16px;
+      font-size: 1rem;
+      color: #333;
+      background-color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .photo-card img {
+        height: 300px;
+      }
+      .photo-caption {
+        font-size: 0.95rem;
+      }
+    }
+
+    footer {
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <img src="logo.JPG" alt="Logo" />
+      <h1>The Foundation</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="achievements.html">Works</a>
+      <a href="join-us.html">Join Us</a>
+      <a href="activity-photos.html" class="active">Activity Photos</a>
+    </nav>
+  </header>
+
+  <section class="gallery-section">
+    <h2>Activity Photos</h2>
+    <p>Here are moments from our outreach programs, donations, and community impact projects.</p>
+
+    <div class="photo-grid">
+      <div class="photo-card">
+        <img src="IMG_2351.JPG"/>
+      </div>
+      <br>
+        <div class="photo-card">
+        <img src="PICTURES FROM PHONE 440.jpg"/>
+      </div>
+      <br>
+      <div class="photo-card">
+        <img src="PICTURES FROM PHONE 522.jpg"/>
+      </div>
+      <br>
+      <div class="photo-card">
+        <img src="IMG_2342.jpg"/>
+      </div>
+      <br>
+      <div class="photo-card">
+        <img src="942c9ec2-e798-4d63-8923-234a606d602b.JPG"/>
+      </div>
+      <br>
+      <div class="photo-card">
+        <img src="IMG_2343.jpg"/>
+      </div>
+      <br>
+      <div class="photo-card">
+        <img src="5c85eae4-184b-4f3d-a80e-84f2fb8cb0e3.JPG"/>
+      </div>
+      <br>
+      <div class="photo-card">
+        <img src="Seminar on TB and HIV with community members.jpg"/>
+      </div>
+      <br>
+      <div class="photo-card">
+        <img src="IMG-20230604-WA0011.jpg"/>
+      </div>
+      <br>
+      <div class="photo-card">
+        <img src="PICTURES FROM PHONE 073.jpg"/>
+      </div>
+      <br>
+      <div class="photo-card">
+        <img src="PICTURES FROM PHONE 423.jpg"/>
+      </div>
+      <br>
+      <div class="photo-card">
+        <img src="IMG_2348.JPG"/>
+      </div>
+      <br>
+      <div class="photo-card">
+        <img src="IMG_2350.JPG"/>
+      </div>
+      <br>
+      <div class="photo-card">
+        <img src="IMG_2352.JPG"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom-right Logo -->
+  <div class="bottom-logo">
+    <img src="logo.JPG" alt="Logo" />
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Eucharia Help Foundation. All Rights Reserved.</p>
+    <p>Contact: www.euchariahelpfoundation.org | +234 803 971 5599 | euchariahelpfoundation@yahoo.com | No 14, Enahoro Street Lekki, Lagos, Nigeria</p>
+  </footer>
+</body>
+</html>
