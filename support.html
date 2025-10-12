@@ -27,23 +27,23 @@
     <p>Join hands with us in creating meaningful change. Fill in the form below to let us know how you’d like to support our cause.</p>
 
     <form class="form-section" id="supportForm" action="https://formspree.io/f/xovkkzlb" method="POST">
-      <label for="fullName">Full Name:</label>
-      <input type="text" id="fullName" required />
+  <label for="fullName">Full Name:</label>
+  <input type="text" id="fullName" name="full_name" placeholder="Enter your full name" required />
 
-      <label for="organization">Organization (Optional):</label>
-      <input type="text" id="organization" />
+  <label for="organization">Organization (Optional):</label>
+  <input type="text" id="organization" name="organization" placeholder="Enter your organization name" />
 
-      <label for="email">Email Address:</label>
-      <input type="email" id="email" required />
+  <label for="email">Email Address:</label>
+  <input type="email" id="email" name="email" placeholder="Enter your email address" required />
 
-      <label for="phone">Phone Number:</label>
-      <input type="tel" id="phone" required />
+  <label for="phone">Phone Number:</label>
+  <input type="tel" id="phone" name="phone_number" placeholder="Enter your phone number" required />
 
-      <label for="supportType">How would you like to support us?</label>
-      <textarea id="supportType" rows="4" required></textarea>
+  <label for="supportType">How would you like to support us?</label>
+  <textarea id="supportType" name="support_type" rows="4" placeholder="Describe how you’d like to help..." required></textarea>
 
-      <button type="submit">Submit</button>
-    </form>
+  <button type="submit">Submit</button>
+</form>
 
     <div id="supportSuccess" class="success-message">
       Thank you for showing interest in supporting us! We’ll contact you soon.
