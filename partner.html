@@ -27,23 +27,24 @@
     <p>Let’s collaborate to bring sustainable solutions and impactful projects to communities in need.</p>
 
     <form class="form-section" id="partnerForm" action="https://formspree.io/f/xovkkzlb" method="POST">
-      <label for="orgName">Organization Name:</label>
-      <input type="text" id="orgName" required />
+  <label for="orgName">Organization Name:</label>
+  <input type="text" id="orgName" name="organization_name" required />
 
-      <label for="fullName">Full Name:</label>
-      <input type="text" id="fullName" required />
+  <label for="fullName">Full Name:</label>
+  <input type="text" id="fullName" name="full_name" required />
 
-      <label for="email">Email Address:</label>
-      <input type="email" id="email" required />
+  <label for="email">Email Address:</label>
+  <input type="email" id="email" name="email" required />
 
-      <label for="phone">Phone Number:</label>
-      <input type="tel" id="phone" required />
+  <label for="phone">Phone Number:</label>
+  <input type="tel" id="phone" name="phone" required />
 
-      <label for="partnershipDetails">Why would you like to partner with us?</label>
-      <textarea id="partnershipDetails" rows="4" required></textarea>
+  <label for="partnershipDetails">Why would you like to partner with us?</label>
+  <textarea id="partnershipDetails" name="partnership_details" rows="4" required></textarea>
 
-      <button type="submit">Submit</button>
-    </form>
+  <button type="submit">Submit</button>
+</form>
+
 
     <div id="partnerSuccess" class="success-message">
       Thank you for your interest in partnering with us! Our management will reach out soon.
