@@ -89,3 +89,51 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+// ===============================
+// FORM HANDLER FOR ALL NGO FORMS
+// Eucharia Help Foundation
+// ===============================
+
+// Utility function to handle form submissions
+async function handleFormSubmit(formId) {
+  const form = document.getElementById(formId);
+  if (!form) return;
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+
+      if (response.ok) {
+        alert("✅ Thank you! Your submission has been sent successfully.");
+        form.reset();
+      } else {
+        alert("⚠️ Oops! Something went wrong while sending your message.");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      alert("🚫 Network error. Please try again later.");
+    }
+  });
+}
+
+// ===============================
+// SUPPORT FORM
+// ===============================
+handleFormSubmit("supportForm");
+
+// ===============================
+// PARTNER FORM
+// ===============================
+handleFormSubmit("partnerForm");
+
+// ===============================
+// DONATE FORM
+// ===============================
+handleFormSubmit("donateForm");
