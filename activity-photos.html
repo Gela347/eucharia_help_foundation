@@ -6,88 +6,143 @@
   <title>Activity Photos | Eucharia Help Foundation</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* --- ACTIVITY PHOTOS PAGE STYLING --- */
     body {
-      background-color: #f8f9fa;
+      margin: 0;
       font-family: "Poppins", sans-serif;
+      background-color: #f8f9fa;
       color: #333;
     }
 
-    .gallery-section {
-      padding: 60px 20px;
-      text-align: center;
-      background-color: #fafafa;
-    }
-
-    .gallery-section h2 {
-      font-size: 2.2em;
-      color: black;
-      margin-bottom: 12px;
-    }
-
-    .gallery-section p {
-      font-size: 1.1em;
-      color: #555;
-      margin-bottom: 40px;
-    }
-
-    /* Main gallery container */
-    .photo-grid {
+    /* ===== NAVBAR ===== */
+    .navbar {
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
       align-items: center;
-      gap: 40px;
-      max-width: 900px;
-      margin: 0 auto;
+      background-color: #005f73;
+      color: white;
+      padding: 15px 30px;
     }
 
-    /* Each photo box */
-    .photo-card {
+    .navbar .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .navbar .logo img {
+      width: 45px;
+      border-radius: 50%;
+    }
+
+    .navbar nav a {
+      margin: 0 15px;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .navbar nav a:hover,
+    .navbar nav a.active {
+      color: #caffbf;
+    }
+
+    /* ===== GALLERY SECTION ===== */
+    .activity-gallery {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       width: 90%;
-      max-width: 800px;
-      background: white;
-      border-radius: 14px;
+      max-width: 1200px;
+      margin: 60px auto;
+      gap: 2rem;
+    }
+
+    .slideshow-container {
+      position: relative;
+      flex-basis: 75%;
+      height: 500px;
       overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 18px;
+      background: #000;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
     }
 
-    .photo-card:hover {
-      transform: scale(1.01);
-      box-shadow: 0 6px 14px rgba(0,0,0,0.15);
-    }
-
-    /* Uniform image size */
-    .photo-card img {
+    .slideshow-container img {
+      position: absolute;
       width: 100%;
-      height: 450px; /* fixed height for all */
-      object-fit: cover; /* crop and fill evenly */
-      display: block;
-      border-bottom: 2px solid #eee;
+      height: 100%;
+      object-fit: contain; /* show full image */
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
     }
 
-    .photo-caption {
-      padding: 16px;
-      font-size: 1rem;
-      color: #333;
-      background-color: #fff;
+    .slideshow-container img.active {
+      opacity: 1;
     }
 
-    @media (max-width: 768px) {
-      .photo-card img {
-        height: 300px;
-      }
-      .photo-caption {
-        font-size: 0.95rem;
-      }
+    .gallery-caption {
+      flex-basis: 25%;
+      text-align: left;
+    }
+
+    .gallery-caption h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #066a43;
+      line-height: 1.6;
+      border-left: 5px solid #0a9396;
+      padding-left: 15px;
+    }
+
+    .bottom-logo {
+      position: fixed;
+      bottom: 15px;
+      right: 15px;
+      width: 60px;
+      opacity: 0.9;
+    }
+
+    .bottom-logo img {
+      width: 100%;
+      border-radius: 50%;
     }
 
     footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: white;
+      background-color: #003844;
+      padding: 25px 10px;
       margin-top: 60px;
+    }
+
+    /* ===== RESPONSIVE DESIGN ===== */
+    @media (max-width: 992px) {
+      .activity-gallery {
+        flex-direction: column;
+      }
+      .slideshow-container {
+        flex-basis: 100%;
+        width: 100%;
+        height: 350px;
+      }
+      .gallery-caption {
+        flex-basis: 100%;
+        text-align: center;
+        margin-top: 25px;
+      }
+      .gallery-caption h2 {
+        font-size: 1.3rem;
+        border-left: none;
+        padding-left: 0;
+      }
     }
   </style>
 </head>
+
 <body>
   <header class="navbar">
     <div class="logo">
@@ -103,201 +158,85 @@
     </nav>
   </header>
 
-  <section class="gallery-section">
-    <h2>Activity Photos</h2>
-    <p>Here are moments from our outreach programs, donations, and community impact projects.</p>
+  <section class="activity-gallery">
+    <div class="slideshow-container">
+      <img src="IMG_2351.JPG" class="active" alt="Outreach program">
+      <img src="PICTURES FROM PHONE 440.jpg" alt="Community event">
+      <img src="PICTURES FROM PHONE 522.jpg" alt="Health outreach">
+      <img src="IMG_2342.jpg" alt="Community service">
+      <img src="942c9ec2-e798-4d63-8923-234a606d602b.JPG" alt="Donation outreach">
+      <img src="IMG_2361 2.jpg" alt="School visit">
+      <img src="IMG_2362 2.jpg" alt="Field work">
+      <img src="IMG_2363 2.jpg" alt="Helping hands">
+      <img src="IMG_2364 2.jpg" alt="Support drive">
+      <img src="IMG_2365 2.jpg" alt="Medical outreach">
+      <img src="IMG_2366 2.jpg" alt="Youth empowerment">
+      <img src="IMG_2367 2.jpg" alt="Care program">
+      <img src="IMG_2368 2.jpg" alt="Health campaign">
+      <img src="IMG_2369 2.jpg" alt="Team meeting">
+      <img src="IMG_2377 2.jpg" alt="Awareness event">
+      <img src="IMG_2378 2.PNG" alt="Support volunteers">
+      <img src="IMG_2379 2.PNG" alt="Foundation event">
+      <img src="IMG_2380 2.PNG" alt="Empowerment session">
+      <img src="IMG_2381 2.PNG" alt="Donations">
+      <img src="IMG_2382 2.PNG" alt="Seminar day">
+      <img src="IMG_2383 2.PNG" alt="Health outreach">
+      <img src="IMG_2384 2.PNG" alt="Rural program">
+      <img src="IMG_2385 2.PNG" alt="Foundation support">
+      <img src="IMG_2386 2.PNG" alt="Team mission">
+      <img src="IMG_2387 2.PNG" alt="Youth activity">
+      <img src="IMG_2389 2.PNG" alt="Volunteer drive">
+      <img src="IMG_2390 2.PNG" alt="Event session">
+      <img src="IMG_2391 2.PNG" alt="Medical help">
+      <img src="IMG_2392 2.PNG" alt="Awareness program">
+      <img src="IMG_2393 2.PNG" alt="Group photo">
+      <img src="IMG_2394 2.PNG" alt="Empowerment camp">
+      <img src="IMG_2395 2.PNG" alt="Health check event">
+      <img src="IMG_2396 2.PNG" alt="Community seminar">
+      <img src="IMG_2397 2.PNG" alt="Charity program">
+      <img src="IMG_2398 2.PNG" alt="Public engagement">
+      <img src="IMG_2399 2.PNG" alt="Group work">
+      <img src="IMG_2343.jpg" alt="Field support">
+      <img src="5c85eae4-184b-4f3d-a80e-84f2fb8cb0e3.JPG" alt="Volunteers helping">
+      <img src="Seminar on TB and HIV with community members.jpg" alt="Seminar on TB and HIV">
+      <img src="IMG-20230604-WA0011.jpg" alt="Donation drive">
+      <img src="PICTURES FROM PHONE 073.jpg" alt="Community engagement">
+      <img src="PICTURES FROM PHONE 423.jpg" alt="Workshop day">
+      <img src="IMG_2348.JPG" alt="Foundation volunteers">
+      <img src="IMG_2350.JPG" alt="Outreach visit">
+      <img src="IMG_2352.JPG" alt="Final outreach moment">
+    </div>
 
-    <div class="photo-grid">
-      <div class="photo-card">
-        <img src="IMG_2351.jpg"/>
-      </div>
-      <br>
-        <div class="photo-card">
-        <img src="PICTURES FROM PHONE 440.jpg"/>
-      </div>
-      <br>
-      <div class="photo-card">
-        <img src="PICTURES FROM PHONE 522.jpg"/>
-      </div>
-      <br>
-      <div class="photo-card">
-        <img src="IMG_2342.jpg"/>
-      </div>
-      <br>
-      <div class="photo-card">
-        <img src="942c9ec2-e798-4d63-8923-234a606d602b.JPG"/>
-      </div>
-      <br>
-      <div class="photo-card">
-        <img src="IMG_2343.jpg"/>
-      </div>
-      <br>
-      <div class="photo-card">
-        <img src="5c85eae4-184b-4f3d-a80e-84f2fb8cb0e3.JPG"/>
-      </div>
-      <br>
-      <div class="photo-card">
-        <img src="Seminar on TB and HIV with community members.jpg"/>
-      </div>
-      <br>
-      <div class="photo-card">
-        <img src="IMG_2361 2.jpg"/>
-      </div>
-      <br>
-      <div class="photo-card">
-        <img src="IMG_2362 2.jpg"/>
-      </div>
-      <br>
-      <div class="photo-card">
-        <img src="IMG_2363 2.jpg"/>
-      </div>
-      <br>
-      <div class="photo-card">
-        <img src="IMG_2364 2.jpg"/>
-      </div>
-      <br>
-      <div class="photo-card">
-        <img src="IMG_2365 2.jpg"/>
-      </div>
-      <br>
-      <div class="photo-card">
-        <img src="IMG_2366 2.jpg"/>
-      </div>
-      <br>
-      <div class="photo-card">
-        <img src="IMG_2367 2.jpg"/>
-      </div>
-      <br>
-      <div class="photo-card">
-        <img src="IMG_2368 2.jpg"/>
-      </div>
-      <br>
-      <div class="photo-card">
-        <img src="IMG_2369 2.jpg"/>
-      </div>
-      <br>
-      <div class="photo-card">
-        <img src="IMG_2377 2.jpg"/>
-      </div>
-      <br>
-      <div class="photo-card">
-        <img src="IMG_2378 2.PNG"/>
-      </div>
-      <br>
-      <div class="photo-card">
-        <img src="IMG_2379 2.PNG"/>
-      </div>
-      <br>
-      <div class="photo-card">
-        <img src="IMG_2380 2.PNG"/>
-      </div>
-      <br>
-      <div class="photo-card">
-        <img src="IMG_2381 2.PNG"/>
-      </div>
-      <br>
-      <div class="photo-card">
-        <img src="IMG_2382 2.PNG"/>
-      </div>
-      <br>
-      <div class="photo-card">
-        <img src="IMG_2383 2.PNG"/>
-      </div>
-      <br>
-      <div class="photo-card">
-        <img src="IMG_2384 2.PNG"/>
-      </div>
-      <br>
-      <div class="photo-card">
-        <img src="IMG_2385 2.PNG"/>
-      </div>
-      <br>
-      <div class="photo-card">
-        <img src="IMG_2386 2.PNG"/>
-      </div>
-      <br>
-      <div class="photo-card">
-        <img src="IMG_2387 2.PNG"/>
-      </div>
-      <br>
-      <div class="photo-card">
-        <img src="IMG_2389 2.PNG"/>
-      </div>
-      <br>
-      <div class="photo-card">
-        <img src="IMG_2390 2.PNG"/>
-      </div>
-      <br>
-      <div class="photo-card">
-        <img src="IMG_2391 2.PNG"/>
-      </div>
-      <br>
-      <div class="photo-card">
-        <img src="IMG_2392 2.PNG"/>
-      </div>
-      <br>
-      <div class="photo-card">
-        <img src="IMG_2393 2.PNG"/>
-      </div>
-      <br>
-      <div class="photo-card">
-        <img src="IMG_2394 2.PNG"/>
-      </div>
-      <br>
-      <div class="photo-card">
-        <img src="IMG_2395 2.PNG"/>
-      </div>
-      <br>
-      <div class="photo-card">
-        <img src="IMG_2396 2.PNG"/>
-      </div>
-      <br>
-      <div class="photo-card">
-        <img src="IMG_2397 2.PNG"/>
-      </div>
-      <br>
-      <div class="photo-card">
-        <img src="IMG_2398 2.PNG"/>
-      </div>
-      <br>
-      <div class="photo-card">
-        <img src="IMG_2399 2.PNG"/>
-      </div>
-      <br>
-      <div class="photo-card">
-        <img src="IMG-20230604-WA0011.jpg"/>
-      </div>
-      <br>
-      <div class="photo-card">
-        <img src="PICTURES FROM PHONE 073.jpg"/>
-      </div>
-      <br>
-      <div class="photo-card">
-        <img src="PICTURES FROM PHONE 423.jpg"/>
-      </div>
-      <br>
-      <div class="photo-card">
-        <img src="IMG_2348.JPG"/>
-      </div>
-      <br>
-      <div class="photo-card">
-        <img src="IMG_2350.JPG"/>
-      </div>
-      <br>
-      <div class="photo-card">
-        <img src="IMG_2352.JPG"/>
-      </div>
+    <div class="gallery-caption">
+      <h2>
+        Here are moments from our outreach programs, and community impact projects.
+      </h2>
     </div>
   </section>
 
-  <!-- Bottom-right Logo -->
   <div class="bottom-logo">
     <img src="logo.JPG" alt="Logo" />
   </div>
 
   <footer>
     <p>&copy; 2025 Eucharia Help Foundation (The Foundation). All Rights Reserved.</p>
-    <p>Contact: www.euchariahelpfoundation.org.ng | +234 803 971 5599 | euchariahelpfoundation@yahoo.com | No 14, Enahoro Street Lekki,Lagos, Nigeria</p>
+    <p>Contact: www.euchariahelpfoundation.org.ng | +234 803 971 5599 | euchariahelpfoundation@yahoo.com</p>
   </footer>
+
+  <script>
+    // ===== Automatic Slideshow =====
+    document.addEventListener("DOMContentLoaded", () => {
+      const slides = document.querySelectorAll(".slideshow-container img");
+      let currentIndex = 0;
+
+      function showNextSlide() {
+        slides[currentIndex].classList.remove("active");
+        currentIndex = (currentIndex + 1) % slides.length;
+        slides[currentIndex].classList.add("active");
+      }
+
+      setInterval(showNextSlide, 4000); // Change every 4 seconds
+    });
+  </script>
 </body>
 </html>
