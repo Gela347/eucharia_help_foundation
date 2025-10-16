@@ -90,8 +90,9 @@ nav a.active {
     background-color: #0d5c2e;
     flex-direction: column;
     align-items: center;
-    padding: 15px 0;
+    padding: 15px 12px;
     gap: 15px;
+    z-index: 9999; 
   }
 
   nav.active {
