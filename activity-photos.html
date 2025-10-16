@@ -244,6 +244,24 @@
 
       setInterval(showNextSlide, 4000); // Change every 4 seconds
     });
+
+    document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.getElementById("hamburger");
+  const nav = document.querySelector(".navlinks");
+
+  if (!hamburger || !nav) {
+    console.error("Hamburger or nav not found");
+    return;
+  }
+
+  hamburger.addEventListener("click", () => {
+    // Toggle both menu and hamburger animation
+    nav.classList.toggle("active");
+    hamburger.classList.toggle("open");
+
+    console.log("Hamburger clicked"); // Debug message
+  });
+});
   </script>
 </body>
 </html>
