@@ -31,6 +31,7 @@ body {
   background: #005f73;
   color: white;
   padding: 15px 40px;
+  position: relative;
 }
 
 .logo {
@@ -60,6 +61,59 @@ nav a:hover,
 nav a.active {
   color: #ffd166;
   background: rgba(255,255,255,0.03);
+}
+
+/* Hamburger Icon */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    left: 0;
+    background-color: #0d5c2e;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 0;
+    gap: 15px;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Animate hamburger to X when opened */
+  .hamburger.open div:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+  }
+
+  .hamburger.open div:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.open div:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+  }
 }
 
 /* ---------- HERO SECTION ---------- */
