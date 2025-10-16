@@ -140,11 +140,20 @@ handleFormSubmit("donateForm");
 
 document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.getElementById("hamburger");
-  const nav = document.querySelector(".navlinks"); // use the correct class selector
+  const nav = document.querySelector(".navlinks");
+
+  if (!hamburger || !nav) {
+    console.error("Hamburger or nav not found");
+    return;
+  }
 
   hamburger.addEventListener("click", () => {
-    nav.classList.toggle("active");      // toggles visibility
-    hamburger.classList.toggle("open");  // animates the icon to X
+    // Toggle both menu and hamburger animation
+    nav.classList.toggle("active");
+    hamburger.classList.toggle("open");
+
+    console.log("Hamburger clicked"); // Debug message
   });
 });
+
 
