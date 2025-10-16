@@ -138,13 +138,13 @@ handleFormSubmit("partnerForm");
 // ===============================
 handleFormSubmit("donateForm");
 
-// Run the script after the DOM is fully loaded
-    document.addEventListener("DOMContentLoaded", () => {
-      const hamburger = document.getElementById("hamburger");
-      const navLinks = document.getElementById("navLinks");
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.getElementById("hamburger");
+  const nav = document.querySelector(".navlinks"); // use the correct class selector
 
-      hamburger.addEventListener("click", () => {
-        nav.classList.toggle("active");
-        hamburger.classList.toggle("active");
-      });
-    });
+  hamburger.addEventListener("click", () => {
+    nav.classList.toggle("active");      // toggles visibility
+    hamburger.classList.toggle("open");  // animates the icon to X
+  });
+});
+
