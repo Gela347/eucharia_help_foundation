@@ -144,7 +144,7 @@ handleFormSubmit("donateForm");
       const navLinks = document.getElementById("navLinks");
 
       hamburger.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
+        nav.classList.toggle("active");
         hamburger.classList.toggle("active");
       });
     });
