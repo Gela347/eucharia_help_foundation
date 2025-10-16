@@ -138,10 +138,13 @@ handleFormSubmit("partnerForm");
 // ===============================
 handleFormSubmit("donateForm");
 
-const hamburger = document.getElementById("hamburger");
-  const navLinks = document.getElementById("navLinks");
+// Run the script after the DOM is fully loaded
+    document.addEventListener("DOMContentLoaded", () => {
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("navLinks");
 
-  hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-    hamburger.classList.toggle("open");
-  });
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        hamburger.classList.toggle("open");
+      });
+    });
