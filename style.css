@@ -82,7 +82,7 @@ body {
 /* Mobile Styles */
 @media (max-width: 768px) {
   .navlinks {
-    display: none;
+    display: none !important;
     position: absolute;
     top: 60px;
     right: 0;
@@ -96,7 +96,7 @@ body {
   }
 
   .navlinks.active {
-    display: flex;
+    display: flex !important;
   }
 
   .hamburger {
