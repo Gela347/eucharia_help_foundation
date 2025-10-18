@@ -68,20 +68,24 @@
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
     }
 
-    .slideshow-container img {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: contain; /* show full image */
-      top: 0;
-      left: 0;
-      opacity: 0;
-      transition: opacity 1.5s ease-in-out;
-    }
 
-    .slideshow-container img.active {
-      opacity: 1;
-    }
+    .slideshow-container img,
+.slideshow-container video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  border-radius: 18px;
+}
+
+.slideshow-container img.active,
+.slideshow-container video.active {
+  opacity: 1;
+}
 
     .gallery-caption {
       flex-basis: 25%;
@@ -167,10 +171,18 @@
   <section class="activity-gallery">
     <div class="slideshow-container">
       <img src="IMG_2351.jpg" class="active" alt="Outreach program">
+      <!-- Videos -->
+      <video src="767891f3-5972-44de-8df5-07d6ebab867b.mp4" muted loop></video>
+      <video src="7339f2e6-1a45-4385-a0f0-5d7b32a6871c.mov" muted loop></video>
+      <video src="39c0694d-a5fe-4695-9df9-3f305d31a38b.mov" muted loop></video>
+      <video src="21ff801d-231e-43db-8681-0a4135b53f3c.mov" muted loop></video>
+      <video src="0bcd94fb-f5b3-4a29-b36a-09e8d566c60d.mov" muted loop></video>
       <img src="PICTURES FROM PHONE 440.jpg" alt="Community event">
       <img src="PICTURES FROM PHONE 522.jpg" alt="Health outreach">
       <img src="IMG_2342.jpg" alt="Community service">
+      <img src="67907d77-1f58-426a-878a-7a16645fff3a.JPG" alt="Community service">
       <img src="942c9ec2-e798-4d63-8923-234a606d602b.JPG" alt="Donation outreach">
+      <img src="26af6936-8d93-47c2-801c-a83ab16a7a6e.JPG" alt="Community service">
       <img src="IMG_2361 2.jpg" alt="School visit">
       <img src="IMG_2362 2.jpg" alt="Field work">
       <img src="IMG_2363 2.jpg" alt="Helping hands">
@@ -239,18 +251,30 @@
 
   <script>
     // ===== Automatic Slideshow =====
-    document.addEventListener("DOMContentLoaded", () => {
-      const slides = document.querySelectorAll(".slideshow-container img");
-      let currentIndex = 0;
+   document.addEventListener("DOMContentLoaded", () => {
+  const slides = document.querySelectorAll(".slideshow-container img, .slideshow-container video");
+  let currentIndex = 0;
 
-      function showNextSlide() {
-        slides[currentIndex].classList.remove("active");
-        currentIndex = (currentIndex + 1) % slides.length;
-        slides[currentIndex].classList.add("active");
-      }
+  function showNextSlide() {
+    slides[currentIndex].classList.remove("active");
 
-      setInterval(showNextSlide, 4000); // Change every 4 seconds
-    });
+    // Pause video if it's currently active
+    if (slides[currentIndex].tagName === "VIDEO") {
+      slides[currentIndex].pause();
+      slides[currentIndex].currentTime = 0;
+    }
+
+    currentIndex = (currentIndex + 1) % slides.length;
+    slides[currentIndex].classList.add("active");
+
+    // Play video if next slide is a video
+    if (slides[currentIndex].tagName === "VIDEO") {
+      slides[currentIndex].play();
+    }
+  }
+
+  setInterval(showNextSlide, 6000); // switch every 6 seconds
+});
 
     document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.getElementById("hamburger");
